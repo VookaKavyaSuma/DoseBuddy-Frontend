@@ -143,3 +143,65 @@ export const uploadPrescriptionPdfApi = async (file, conversationId) => {
     return data;
 };
 
+export const fetchMedicationsApi = async (category = '') => {
+    const token = getStoredToken();
+    const headers = { 'Content-Type': 'application/json' };
+    if (token) headers['Authorization'] = `Bearer ${token}`;
+
+    const url = category ? `${API_BASE_URL}/medications?category=${encodeURIComponent(category)}` : `${API_BASE_URL}/medications`;
+    const response = await fetch(url, { headers });
+    if (!response.ok) {
+        throw new Error('Failed to fetch medications');
+    }
+    return await response.json();
+};
+
+export const createMedicationApi = async (medicationData) => {
+    const token = getStoredToken();
+    const headers = { 'Content-Type': 'application/json' };
+    if (token) headers['Authorization'] = `Bearer ${token}`;
+
+    const response = await fetch(`${API_BASE_URL}/medications`, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify(medicationData)
+    });
+
+    const data = await response.json();
+    if (!response.ok) {
+        throw new Error(data.error || 'Failed to create medication');
+    }
+    return data;
+};
+
+export const takeMedicationDoseApi = async (id) => {
+    const token = getStoredToken();
+    const headers = { 'Content-Type': 'application/json' };
+    if (token) headers['Authorization'] = `Bearer ${token}`;
+
+    const response = await fetch(`${API_BASE_URL}/medications/${id}/take`, {
+        method: 'POST',
+        headers
+    });
+
+    if (!response.ok) {
+        throw new Error('Failed to record taken dose');
+    }
+    return await response.json();
+};
+
+export const deleteMedicationApi = async (id) => {
+    const token = getStoredToken();
+    const headers = {};
+    if (token) headers['Authorization'] = `Bearer ${token}`;
+
+    const response = await fetch(`${API_BASE_URL}/medications/${id}`, {
+        method: 'DELETE',
+        headers
+    });
+
+    if (!response.ok) {
+        throw new Error('Failed to delete medication');
+    }
+    return await response.json();
+};
