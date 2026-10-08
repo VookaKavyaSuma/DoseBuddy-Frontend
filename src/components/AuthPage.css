@@ -1,0 +1,622 @@
+/* =========================================================
+   DoseBuddy Medical Theme - Authentication Page Styles
+   Warm Creme, Clinical White, Healing Forest & Amber Tones
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary-teal: #0d7b5f;
+    --primary-hover: #095c46;
+    --accent-emerald: #10b981;
+    --accent-amber: #b45309;
+    --bg-medical: #f7f9f7;
+    --card-bg: #ffffff;
+    --card-border: #e2ece4;
+    --text-main: #132e27;
+    --text-muted: #526c63;
+    --input-bg: #f9fbf9;
+    --input-border: #d5e4da;
+    --focus-ring: rgba(13, 123, 95, 0.15);
+    --radius-lg: 24px;
+    --radius-md: 14px;
+    --shadow-glow: 0 20px 45px -12px rgba(13, 123, 95, 0.18);
+}
+
+.auth-container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1.25rem;
+    background: radial-gradient(circle at 50% 10%, #edf6f1 0%, #f7f9f7 50%, #fbf8f2 100%);
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-main);
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Ambient glow blobs - Soft medical tints */
+.ambient-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    pointer-events: none;
+    opacity: 0.45;
+    animation: floatGlow 14s infinite alternate ease-in-out;
+}
+
+.glow-teal {
+    width: 500px;
+    height: 500px;
+    background: #a7f3d0;
+    top: -15%;
+    left: -10%;
+}
+
+.glow-blue {
+    width: 450px;
+    height: 450px;
+    background: #fed7aa;
+    bottom: -15%;
+    right: -10%;
+    opacity: 0.35;
+}
+
+.glow-emerald {
+    width: 400px;
+    height: 400px;
+    background: #bbf7d0;
+    top: 35%;
+    left: 45%;
+    opacity: 0.25;
+}
+
+@keyframes floatGlow {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(30px, -35px) scale(1.08); }
+}
+
+.auth-wrapper {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    max-width: 1120px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--card-border);
+    border-radius: 28px;
+    box-shadow: 0 25px 60px -15px rgba(19, 46, 39, 0.1), 0 4px 16px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+    z-index: 10;
+}
+
+/* Left Showcase Panel - Soothing Medical Herbal Gradient */
+.auth-brand-card {
+    background: linear-gradient(150deg, #edf6f1 0%, #f8fbf9 55%, #faf6ee 100%);
+    padding: 3.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid var(--card-border);
+    position: relative;
+}
+
+.brand-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.brand-logo-pill {
+    width: 68px;
+    height: 68px;
+    background: linear-gradient(135deg, #0d7b5f 0%, #10b981 100%);
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.1rem;
+    box-shadow: 0 12px 28px -5px rgba(13, 123, 95, 0.35);
+    position: relative;
+    margin-bottom: 1.25rem;
+    border: 2px solid #ffffff;
+}
+
+.heart-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    font-size: 0.95rem;
+    background: #ffffff;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.brand-title {
+    font-size: 2.35rem;
+    font-weight: 800;
+    margin: 0;
+    color: var(--text-main);
+    letter-spacing: -0.02em;
+}
+
+.brand-tagline {
+    color: var(--text-muted);
+    font-size: 0.96rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.brand-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 2.5rem 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: #ffffff;
+    padding: 1.1rem 1.25rem;
+    border-radius: 18px;
+    border: 1px solid #e5ede7;
+    box-shadow: 0 2px 8px rgba(19, 46, 39, 0.03);
+    transition: all 0.25s ease;
+}
+
+.feature-item:hover {
+    transform: translateX(4px);
+    border-color: #0d7b5f;
+    box-shadow: 0 6px 18px rgba(13, 123, 95, 0.08);
+}
+
+.feature-icon {
+    font-size: 1.45rem;
+    background: #e6f7f2;
+    border: 1px solid #a7f3d0;
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.feature-text h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.feature-text p {
+    margin: 0.25rem 0 0 0;
+    font-size: 0.835rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+}
+
+.brand-footer {
+    padding-top: 1rem;
+}
+
+.security-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #e6f7f2;
+    color: #0d7b5f;
+    border: 1px solid #a7f3d0;
+    padding: 0.5rem 1.1rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* Right Form Panel - Crisp Clinical White */
+.auth-form-card {
+    padding: 3.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #ffffff;
+}
+
+.auth-header h2 {
+    font-size: 1.85rem;
+    font-weight: 800;
+    margin: 0;
+    color: var(--text-main);
+    letter-spacing: -0.02em;
+}
+
+.auth-header p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    margin-top: 0.4rem;
+}
+
+/* Tab Switcher */
+.tab-switcher {
+    display: flex;
+    background: #f1f5f2;
+    padding: 5px;
+    border-radius: 16px;
+    margin: 1.5rem 0 1rem 0;
+    border: 1px solid var(--card-border);
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 0.65rem 1rem;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-hover) 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(13, 123, 95, 0.25);
+}
+
+/* Quick Demo Login Box - Warm Herbal Cream & Amber Accents */
+.demo-login-box {
+    background: linear-gradient(135deg, #fbf8f0 0%, #f4f8f5 100%);
+    border: 1px dashed #cbdad0;
+    border-radius: 16px;
+    padding: 0.85rem 1.1rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.demo-label {
+    font-size: 0.74rem;
+    font-weight: 800;
+    color: var(--primary-teal);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.demo-btn-group {
+    display: flex;
+    gap: 0.65rem;
+}
+
+.demo-chip {
+    flex: 1;
+    padding: 0.5rem 0.85rem;
+    border-radius: 10px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+}
+
+.demo-chip.caregiver {
+    background: #e6f7f2;
+    color: #0d7b5f;
+    border: 1px solid #a7f3d0;
+}
+
+.demo-chip.caregiver:hover {
+    background: #0d7b5f;
+    color: #ffffff;
+    border-color: #0d7b5f;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(13, 123, 95, 0.25);
+}
+
+.demo-chip.patient {
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fde68a;
+}
+
+.demo-chip.patient:hover {
+    background: #b45309;
+    color: #ffffff;
+    border-color: #b45309;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(180, 83, 9, 0.25);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 1rem 0 1.25rem 0;
+    color: #718a81;
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+}
+
+.divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e2ece4;
+}
+
+.divider span {
+    padding: 0 0.85rem;
+}
+
+/* Alert Messages */
+.alert-box {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.8rem 1rem;
+    border-radius: 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    animation: fadeIn 0.3s ease;
+}
+
+.alert-box.error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+}
+
+.alert-box.success {
+    background: #e6f7f2;
+    border: 1px solid #a7f3d0;
+    color: #0d7b5f;
+}
+
+/* Form Styles */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.form-group label {
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forgot-link {
+    background: none;
+    border: none;
+    color: var(--primary-teal);
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 1rem;
+    font-size: 1.1rem;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.85rem;
+    background: var(--input-bg);
+    border: 1.5px solid var(--input-border);
+    border-radius: var(--radius-md);
+    color: var(--text-main);
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.input-wrapper input:focus {
+    outline: none;
+    border-color: var(--primary-teal);
+    box-shadow: 0 0 0 4px var(--focus-ring);
+    background: #ffffff;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 0.85rem;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 0.25rem;
+}
+
+/* Role Selector Radio Cards */
+.role-selector {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+}
+
+.role-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
+    background: var(--input-bg);
+    border: 1.5px solid var(--input-border);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.role-card input[type="radio"] {
+    display: none;
+}
+
+.role-card.selected {
+    border-color: var(--primary-teal);
+    background: #e6f7f2;
+    box-shadow: 0 0 0 2px var(--primary-teal);
+}
+
+.role-emoji {
+    font-size: 1.4rem;
+}
+
+.role-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.role-name {
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.role-desc {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+
+/* Remember me */
+.remember-me-row {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.checkbox-label input[type="checkbox"] {
+    accent-color: var(--primary-teal);
+    width: 17px;
+    height: 17px;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 0.95rem 1.5rem;
+    margin-top: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-teal) 0%, var(--accent-emerald) 100%);
+    border: none;
+    border-radius: var(--radius-md);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 800;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 10px 22px -5px rgba(13, 123, 95, 0.35);
+    transition: all 0.2s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px -5px rgba(13, 123, 95, 0.45);
+    filter: brightness(1.03);
+}
+
+.submit-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.auth-footer-note {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.86rem;
+    color: var(--text-muted);
+}
+
+.inline-link {
+    background: none;
+    border: none;
+    color: var(--primary-teal);
+    font-weight: 800;
+    cursor: pointer;
+    font-size: inherit;
+    padding: 0 0.25rem;
+}
+
+.inline-link:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .auth-wrapper {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+    }
+
+    .auth-brand-card {
+        display: none;
+    }
+
+    .auth-form-card {
+        padding: 2.25rem 1.5rem;
+    }
+}

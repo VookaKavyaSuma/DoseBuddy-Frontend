@@ -1,0 +1,510 @@
+/* =========================================================
+   DoseBuddy Medical Theme - Dashboard View Styles
+   Clinical White, Soothing Sage, Herbal Forest & Amber Tones
+   ========================================================= */
+
+.dashboard-page {
+    min-height: 100vh;
+    background: var(--med-bg, #f7f9f7);
+    color: var(--med-text-main, #132e27);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    padding-bottom: 5rem;
+}
+
+.dashboard-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+}
+
+/* Welcome Banner - Soothing Mint, Ivory & Creme Gradient */
+.welcome-banner {
+    background: linear-gradient(135deg, #edf7f2 0%, #ffffff 50%, #fbf8f0 100%);
+    border: 1px solid var(--med-border, #e2ece4);
+    border-radius: 26px;
+    padding: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 30px -8px rgba(19, 46, 39, 0.06), 0 2px 8px rgba(0, 0, 0, 0.02);
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-banner::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.banner-left h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0.65rem 0 0.35rem 0;
+    color: var(--med-text-main, #132e27);
+    letter-spacing: -0.02em;
+}
+
+.banner-left p {
+    color: var(--med-text-muted, #526c63);
+    margin: 0;
+    font-size: 0.96rem;
+    max-width: 680px;
+    line-height: 1.55;
+    font-weight: 500;
+}
+
+.auth-status-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #e6f7f2;
+    color: #0d7b5f;
+    border: 1px solid #a7f3d0;
+    padding: 0.35rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: #0d7b5f;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(13, 123, 95, 0.6);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.4; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.25); }
+    100% { opacity: 0.4; transform: scale(0.9); }
+}
+
+.add-med-btn {
+    background: linear-gradient(135deg, #0d7b5f 0%, #10b981 100%);
+    border: none;
+    color: #ffffff;
+    padding: 0.9rem 1.65rem;
+    border-radius: 16px;
+    font-size: 0.96rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 10px 24px -5px rgba(13, 123, 95, 0.35);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.add-med-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px -5px rgba(13, 123, 95, 0.45);
+    filter: brightness(1.03);
+}
+
+/* Session Info Bar - Crisp Clinical White */
+.session-info-card {
+    background: #ffffff;
+    border: 1px solid var(--med-border, #e2ece4);
+    border-radius: 18px;
+    padding: 1.1rem 1.65rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.75rem;
+    align-items: center;
+    box-shadow: 0 2px 12px rgba(19, 46, 39, 0.03);
+}
+
+.session-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.86rem;
+}
+
+.session-label {
+    color: var(--med-text-muted, #526c63);
+    font-weight: 600;
+}
+
+.session-val {
+    color: var(--med-text-main, #132e27);
+    font-weight: 700;
+}
+
+.session-val.highlight {
+    color: #0d7b5f;
+    background: #e6f7f2;
+    padding: 0.2rem 0.6rem;
+    border-radius: 8px;
+    border: 1px solid #a7f3d0;
+}
+
+.session-code {
+    background: #f1f6f3;
+    padding: 0.25rem 0.6rem;
+    border-radius: 8px;
+    color: #0d7b5f;
+    font-family: monospace;
+    font-size: 0.82rem;
+    border: 1px solid #d5e4da;
+    font-weight: 600;
+}
+
+/* Folder Tabs */
+.meds-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.folder-tabs {
+    display: flex;
+    gap: 0.85rem;
+    border-bottom: 2px solid var(--med-border, #e2ece4);
+    padding-bottom: 0.85rem;
+}
+
+.folder-tab {
+    background: transparent;
+    border: none;
+    color: var(--med-text-muted, #526c63);
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.65rem 1.25rem;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.folder-tab:hover {
+    color: #0d7b5f;
+    background: #f1f6f3;
+}
+
+.folder-tab.active {
+    background: #e6f7f2;
+    color: #0d7b5f;
+    border: 1px solid #a7f3d0;
+    box-shadow: 0 2px 8px rgba(13, 123, 95, 0.12);
+}
+
+/* Meds Grid & Cards */
+.meds-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.75rem;
+    margin-top: 1.75rem;
+}
+
+.med-card {
+    background: #ffffff;
+    border: 1.5px solid var(--med-border, #e2ece4);
+    border-radius: 22px;
+    padding: 1.65rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.35rem;
+    box-shadow: 0 4px 18px -2px rgba(19, 46, 39, 0.04);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.med-card:hover {
+    transform: translateY(-4px);
+    border-color: #0d7b5f;
+    box-shadow: 0 14px 32px -4px rgba(13, 123, 95, 0.12);
+}
+
+.med-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+}
+
+.med-icon-box {
+    width: 54px;
+    height: 54px;
+    background: #e6f7f2;
+    border: 1px solid #a7f3d0;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.85rem;
+    box-shadow: 0 4px 10px rgba(13, 123, 95, 0.1);
+}
+
+.med-title-group h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--med-text-main, #132e27);
+    letter-spacing: -0.01em;
+}
+
+.med-reason {
+    font-size: 0.82rem;
+    color: #0d7b5f;
+    font-weight: 700;
+    margin-top: 2px;
+    display: block;
+}
+
+.med-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    background: #f8faf8;
+    padding: 1rem 1.1rem;
+    border-radius: 14px;
+    border: 1px solid #e7efe9;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.84rem;
+}
+
+.detail-label {
+    color: var(--med-text-muted, #526c63);
+    font-weight: 600;
+}
+
+.detail-value {
+    color: var(--med-text-main, #132e27);
+    font-weight: 700;
+}
+
+/* Warm apothecary amber highlight for schedule */
+.detail-value.schedule {
+    color: #b45309;
+    background: #fef3c7;
+    padding: 0.15rem 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #fde68a;
+    font-size: 0.8rem;
+}
+
+.detail-value.note {
+    color: #475569;
+    font-style: italic;
+    font-weight: 500;
+    max-width: 60%;
+    text-align: right;
+}
+
+.med-inventory-bar {
+    display: flex;
+    flex-direction: column;
+}
+
+.inventory-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    margin-bottom: 0.45rem;
+    color: var(--med-text-muted, #526c63);
+    font-weight: 600;
+}
+
+.inventory-count {
+    font-weight: 800;
+    color: #0d7b5f;
+}
+
+.inventory-count.low {
+    color: #b91c1c;
+}
+
+.progress-track {
+    width: 100%;
+    height: 9px;
+    background: #e5ede7;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #0d7b5f 0%, #10b981 100%);
+    border-radius: 6px;
+    transition: width 0.4s ease;
+}
+
+.progress-fill.low {
+    background: linear-gradient(90deg, #dc2626 0%, #f97316 100%);
+}
+
+.refill-warning {
+    margin-top: 0.65rem;
+    font-size: 0.78rem;
+    color: #92400e;
+    font-weight: 700;
+    background: #fef3c7;
+    padding: 0.45rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #fde68a;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+/* Modal Overlay & Card */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(19, 46, 39, 0.45);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    padding: 1.5rem;
+}
+
+.modal-card {
+    background: #ffffff;
+    border: 1.5px solid var(--med-border, #e2ece4);
+    border-radius: 24px;
+    width: 100%;
+    max-width: 500px;
+    padding: 2.25rem;
+    box-shadow: 0 25px 60px -15px rgba(19, 46, 39, 0.2);
+    animation: modalIn 0.25s ease-out;
+}
+
+@keyframes modalIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e7efe9;
+    padding-bottom: 1rem;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--med-text-main, #132e27);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: var(--med-text-light, #718a81);
+    font-size: 1.35rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    line-height: 1;
+    border-radius: 8px;
+    transition: color 0.15s;
+}
+
+.close-btn:hover {
+    color: var(--med-text-main, #132e27);
+    background: #f1f6f3;
+}
+
+.modal-body {
+    margin-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.modal-body p {
+    color: var(--med-text-muted, #526c63);
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.45;
+}
+
+.modal-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.modal-form-group label {
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--med-text-main, #132e27);
+}
+
+.modal-form-group input {
+    padding: 0.75rem 1rem;
+    background: #f9fbf9;
+    border: 1.5px solid #d5e4da;
+    border-radius: 12px;
+    color: var(--med-text-main, #132e27);
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+.modal-form-group input:focus {
+    outline: none;
+    border-color: #0d7b5f;
+    box-shadow: 0 0 0 4px rgba(13, 123, 95, 0.12);
+    background: #ffffff;
+}
+
+.modal-submit-btn {
+    background: linear-gradient(135deg, #0d7b5f 0%, #10b981 100%);
+    border: none;
+    color: #ffffff;
+    padding: 0.95rem;
+    border-radius: 14px;
+    font-weight: 800;
+    font-size: 0.96rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    box-shadow: 0 8px 20px -4px rgba(13, 123, 95, 0.3);
+    transition: all 0.2s ease;
+}
+
+.modal-submit-btn:hover {
+    filter: brightness(1.05);
+    box-shadow: 0 12px 25px -4px rgba(13, 123, 95, 0.45);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .welcome-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+        padding: 1.75rem;
+    }
+
+    .banner-left h1 {
+        font-size: 1.6rem;
+    }
+
+    .add-med-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

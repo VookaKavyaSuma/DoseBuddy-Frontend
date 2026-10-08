@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+:root {
+  /* Medical Theme Palette: Clinical White, Soothing Sage, Herbal Forest & Warm Apothecary Amber */
+  --med-bg: #f7f9f7;
+  --med-bg-cream: #fbf9f5;
+  --med-surface: #ffffff;
+  --med-surface-subtle: #f3f7f4;
+  --med-surface-cream: #faf7f2;
+  --med-border: #e2ece4;
+  --med-border-subtle: #edf4ef;
+  --med-border-strong: #cbdad0;
+  --med-border-amber: #fde68a;
+
+  /* Typography */
+  --med-text-main: #132e27;
+  --med-text-muted: #526c63;
+  --med-text-light: #718a81;
+  --med-text-dark: #0a1f1a;
+
+  /* Medical Healing Green Accents */
+  --med-primary: #0d7b5f;
+  --med-primary-hover: #095c46;
+  --med-primary-light: #e6f7f2;
+  --med-primary-border: #a7f3d0;
+  --med-secondary: #15803d;
+  --med-emerald: #10b981;
+
+  /* Apothecary Amber / Warm Brown Accents */
+  --med-amber: #b45309;
+  --med-amber-hover: #92400e;
+  --med-amber-light: #fef3c7;
+  --med-brown: #78350f;
+  --med-brown-surface: #faf6f0;
+
+  /* Elevation & Shadows */
+  --med-shadow-xs: 0 1px 3px rgba(19, 46, 39, 0.04);
+  --med-shadow-sm: 0 3px 10px rgba(19, 46, 39, 0.06);
+  --med-shadow-md: 0 10px 30px -4px rgba(19, 46, 39, 0.08), 0 2px 8px -1px rgba(0, 0, 0, 0.03);
+  --med-shadow-lg: 0 24px 48px -12px rgba(19, 46, 39, 0.12), 0 4px 16px rgba(0, 0, 0, 0.04);
+  --med-shadow-glow: 0 12px 28px -4px rgba(13, 123, 95, 0.28);
+  --med-shadow-amber: 0 10px 24px -4px rgba(180, 83, 9, 0.22);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--med-bg);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(13, 123, 95, 0.04) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(180, 83, 9, 0.03) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(16, 185, 129, 0.03) 0px, transparent 50%);
+  color: var(--med-text-main);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+button {
+  font-family: inherit;
+}
+
+input, select, textarea {
+  font-family: inherit;
+}
+
+/* Custom Medical Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--med-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbdad0;
+  border-radius: 999px;
+  border: 2px solid var(--med-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ab3a3;
+}
